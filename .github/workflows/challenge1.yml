@@ -1,0 +1,24 @@
+name: challenge-exercise-1
+
+on: push
+
+jobs:
+    job-one:
+        runs-on: ubuntu-latest
+        steps:
+        - run: date
+    job-two:
+        runs-on: windows-latest
+        steps:
+        - run: date
+    job-three:
+        runs-on: macos-latest
+        steps:
+        - run: date
+    job-four:
+        runs-on: ubuntu-latest
+        needs: [job-one, job-two, job-three]
+        steps:
+        - run: date
+        
+    
